@@ -6,17 +6,27 @@ import { App } from './app';
 import { News } from './components/news/news';
 import { Header } from './components/header/header';
 import { MainPage } from './components/main-page/main-page';
+import { Products } from './components/products/products';
+import { Practices } from './components/practices/practices';
+import { Contacts } from './components/contacts/contacts';
+import { DialogForm } from './components/dialog-form/dialog-form';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     App,
     News,
     Header,
-    MainPage
+    MainPage,
+    Products,
+    Practices,
+    Contacts,
+    DialogForm
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideBrowserGlobalErrorListeners()

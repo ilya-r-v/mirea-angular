@@ -1,0 +1,59 @@
+<div class="dialog">
+    <div class="modal-header">
+        <h2>Форма обратной связи</h2>
+    </div>
+    <div class="modal-content">
+        <form [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-group"> 
+                <label for="name">Имя <span class="required">*</span></label>
+                <input name="name" formControlName="userName" placeholder="Введите ваше имя"/>
+                <div *ngIf="form.get('userName')?.touched && form.get('userName')?.invalid" class="error-message">
+                    Имя обязательно для заполнения
+                </div>
+            </div>
+            <div class="form-group"> 
+                <label for="phone">Телефон <span class="required">*</span></label>
+                <input name="phone" formControlName="phone" placeholder="+7 (XXX) XXX-XX-XX">
+                <div *ngIf="form.get('phone')?.touched && form.get('phone')?.invalid" class="error-message">
+                    <span *ngIf="form.get('phone')?.errors?.['required']">Телефон обязателен</span>
+                    <span *ngIf="form.get('phone')?.errors?.['pattern']">Введите 11 цифр номера начиная с 8</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Электронная почта <span class="required">*</span></label>
+                <input name="email" formControlName="email" placeholder="example@mail.ru">
+                <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="error-message">
+                    <span *ngIf="form.get('email')?.errors?.['required']">Email обязателен</span>
+                    <span *ngIf="form.get('email')?.errors?.['email']">Введите корректный email</span>
+                </div>
+            </div>
+            <div class="form-group"> 
+                <label for="category">Категория обращения<span class="required">*</span></label>
+                <select id="category" name="category" formControlName="selectOption">
+                    <option value="">Выберите категорию</option>
+                    <option value="technical">Техническая поддержка</option>
+                    <option value="commercial">Коммерческое предложение</option>
+                    <option value="cooperation">Сотрудничество</option>
+                    <option value="complaint">Жалоба</option>
+                    <option value="suggestion">Предложение</option>
+                    <option value="other">Другое</option>
+                </select>
+                <div *ngIf="form.get('selectOption')?.touched && form.get('selectOption')?.invalid" class="error-message">
+                    Выберите категорию обращения
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="message">Текст обращения<span class="required">*</span></label>
+                <textarea id="message" name="message" formControlName="message" placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                <div *ngIf="form.get('message')?.touched && form.get('message')?.invalid" class="error-message">
+                    <span *ngIf="form.get('message')?.errors?.['required']">Сообщение обязательно</span>
+                    <span *ngIf="form.get('message')?.errors?.['minlength']">Минимум 10 символов</span>
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" (click)="onCancel()">Отмена</button>
+                <button type="submit" class="btn btn-primary">Отправить</button>
+            </div>
+        </form>
+    </div>
+</div>

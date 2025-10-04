@@ -1,0 +1,20 @@
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+    .main {
+        padding: 40px;
+        max-width: 900px;
+        margin: 0 auto;
+        grid-area: main;
+    }
+}

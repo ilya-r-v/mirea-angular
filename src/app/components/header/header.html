@@ -1,10 +1,22 @@
-<div>
+<div class="header">
     <p>Хэдер</p>
 </div>
-<div class="header">
-    <span class="item" [routerLink]="['/']">Главная</span>
-    <span class="item" [routerLink]="['/news']">Новости</span>
-    <span class="item">Практики</span>
-    <span class="item">Товары</span>
-    <span class="item">Контакты</span>
+<div class="nav"> 
+    <ul class="nav-list">
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']">Главная</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/news']">Новости</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/practices']">Практики</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/products']">Товары</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/contacts']">Контакты</a>
+        </li>
+    </ul>
 </div>
