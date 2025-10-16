@@ -16,6 +16,9 @@ export class Contacts {
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('Диалог закрыт', result);
+      if (result) {
+        alert('Ваша заявка успешно отправлена.');
+      }
     });
   }
 }

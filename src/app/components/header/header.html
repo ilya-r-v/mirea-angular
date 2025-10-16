@@ -1,22 +1,25 @@
-<div class="header">
-    <p>Хэдер</p>
-</div>
-<div class="nav"> 
-    <ul class="nav-list">
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/']">Главная</a>
+<header class="header">
+    <button class="theme-btn" (click)="toggleTheme()">
+    {{ isDarkTheme ? '☀️' : '🌙' }}
+    </button>
+</header>
+
+<nav class="nav nav--sticky nav--with-shadow"> 
+    <ul class="nav__list">
+        <li class="nav__item">
+            <a class="nav__link" [routerLink]="['/']">Главная</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/news']">Новости</a>
+        <li class="nav__item">
+            <a class="nav__link" [routerLink]="['/news']">Новости</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/practices']">Практики</a>
+        <li class="nav__item">
+            <a class="nav__link" [routerLink]="['/practices']">Практики</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/products']">Товары</a>
+        <li class="nav__item">
+            <a class="nav__link" [routerLink]="['/products']">Товары</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/contacts']">Контакты</a>
+        <li class="nav__item">
+            <a class="nav__link" [routerLink]="['/contacts']">Контакты</a>
         </li>
     </ul>
-</div>
+</nav>

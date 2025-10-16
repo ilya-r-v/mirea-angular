@@ -1,101 +1,227 @@
-.main {
+$color-primary: #667eea;
+$color-secondary: #4facfe;
+$color-accent: #00f2fe;
+$color-background: #ffffff;
+$color-background-alt: #f8f9fa;
+$color-background-alt-2: #e9ecef;
+$color-text-primary: #2c3e50;
+$color-text-secondary: #7f8c8d;
+$color-white: #ffffff;
+
+$shadow-light: 0 2px 8px rgba(0, 0, 0, 0.1);
+$shadow-medium: 0 4px 15px rgba(79, 172, 254, 0.3);
+$shadow-heavy: 0 5px 20px rgba(0, 0, 0, 0.08);
+$shadow-hover: 0 6px 20px rgba(79, 172, 254, 0.4);
+
+$font-size-sm: 14px;
+$font-size-base: 16px;
+$font-size-lg: 20px;
+$font-size-xl: 28px;
+
+$font-weight-semibold: 600;
+$font-weight-light: 300;
+
+$line-height-normal: 1.6;
+$line-height-loose: 1.8;
+$spacing-sm: 10px;
+$spacing-md: 15px;
+$spacing-lg: 20px;
+$spacing-xl: 25px;
+$spacing-xxl: 30px;
+$spacing-section: 50px;
+
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 15px;
+$border-radius-pill: 25px;
+
+$gradient-primary: linear-gradient(135deg, $color-secondary 0%, $color-accent 100%);
+$gradient-secondary: linear-gradient(135deg, $color-background-alt 0%, $color-background-alt-2 100%);
+
+$transition-normal: 0.3s ease;
+
+$card-min-width: 300px;
+$skill-min-width: 150px;
+
+.page {
     text-align: center;
-    .info {
-        .pic {
-            max-width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-    }
+}
 
-    .about-me {
-        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        padding: 25px;
-        border-radius: 15px;
-        margin: 30px 0;
-        border-left: 5px solid #667eea;
-        font-size: 16px;
-        line-height: 1.8;
+.author {
+    &__photo {
+        max-width: 100%;
+        height: auto;
+        border-radius: $border-radius-md;
+        box-shadow: $shadow-light;
     }
-
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 15px;
-        margin: 20px 0;
-    }
-
-    .skill-tag {
-        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        color: white;
-        padding: 12px 25px;
-        border-radius: 25px;
-        font-weight: 600;
-        font-size: 14px;
-        box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
-        transition: all 0.3s ease;
-        text-align: center;
-    }
-
-    .skill-tag:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 20px rgba(79, 172, 254, 0.4);
-    }
-
-    .experience-section {
-        margin-top: 50px;
-    }
-    .section-title {
-        font-size: 28px;
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 30px;
-        font-weight: 300;
-    }
-    .experience-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-    }
-
-    .experience-card {
-        background: white;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        border-left: 4px solid #667eea;
-        transition: transform 0.3s ease;
-
-        .experience-title {
-            font-size: 20px;
-            color: #2c3e50;
-            margin: 0 0 10px 0;
-            font-weight: 600;
-        }
-
-        .experience-desc {
-            color: #7f8c8d;
-            line-height: 1.6;
-            margin: 0;
-        }
-    }
-
-    .experience-card:hover {
-         transform: translateX(5px);
+    
+    &__caption,
+    &__name,
+    &__group {
+        margin: $spacing-sm 0;
     }
 }
 
+.about {
+    background: $gradient-secondary;
+    padding: $spacing-xl;
+    border-radius: $border-radius-xl;
+    margin: $spacing-xxl 0;
+    border-left: 5px solid $color-primary;
+    font-size: $font-size-base;
+    line-height: $line-height-loose;
+
+    &__title {
+        margin-bottom: $spacing-md;
+    }
+}
+
+.skills {
+    &__title {
+        margin-bottom: $spacing-lg;
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($skill-min-width, 1fr));
+        gap: $spacing-md;
+        margin: $spacing-lg 0;
+    }
+}
+
+.skill-tag {
+    background: $gradient-primary;
+    color: $color-white;
+    padding: $spacing-sm $spacing-xl;
+    border-radius: $border-radius-pill;
+    font-weight: $font-weight-semibold;
+    font-size: $font-size-sm;
+    box-shadow: $shadow-medium;
+    transition: all $transition-normal;
+    text-align: center;
+
+    &:hover {
+        transform: translateY(-3px);
+        box-shadow: $shadow-hover;
+    }
+    
+    &--primary {
+        background: $gradient-primary;
+    }
+    
+    &--secondary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+}
+
+.experience {
+    margin-top: $spacing-section;
+
+    &__title {
+        font-size: $font-size-xl;
+        color: $color-text-primary;
+        text-align: center;
+        margin-bottom: $spacing-xxl;
+        font-weight: $font-weight-light;
+    }
+    
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr));
+        gap: $spacing-lg;
+    }
+}
+
+.card {
+    background: $color-background;
+    padding: $spacing-xl;
+    border-radius: $border-radius-lg;
+    box-shadow: $shadow-heavy;
+    transition: transform $transition-normal;
+
+    &__title {
+        font-size: $font-size-lg;
+        color: $color-text-primary;
+        margin: 0 0 $spacing-sm 0;
+        font-weight: $font-weight-semibold;
+    }
+
+    &__description {
+        color: $color-text-secondary;
+        line-height: $line-height-normal;
+        margin: 0;
+    }
+
+    &:hover {
+        transform: translateX(5px);
+    }
+    
+    &--work {
+        border-left: 4px solid #667eea;
+    }
+    
+    &--project {
+        border-left: 4px solid #667eea;
+    }
+    
+    &--internship {
+        border-left: 4px solid #667eea;
+    }
+    
+    &--no-border {
+        border-left: none;
+    }
+
+    &--small {
+        padding: $spacing-lg;
+    }
+    
+    &--large {
+        padding: $spacing-xxl;
+    }
+}
+
+.card.is-active {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.skill-tag.is-highlighted {
+    transform: scale(1.1);
+    z-index: 1;
+}
+
 @media (max-width: 768px) {
-        .skills-grid {
-            grid-template-columns: 1fr;
-        }
+    .skills__grid {
+        grid-template-columns: 1fr;
+    }
 
-        .experience-grid {
-            grid-template-columns: 1fr;
-        }
-
-        main.content {
-            padding: 20px;
+    .experience__grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .page {
+        padding: $spacing-lg;
+    }
+    
+    .card {
+        &--large {
+            padding: $spacing-xl;
         }
     }
+}
+
+@media (max-width: 480px) {
+    .skills__grid {
+        grid-template-columns: 1fr;
+        gap: $spacing-sm;
+    }
+    
+    .card {
+        padding: $spacing-lg;
+        
+        &--large {
+            padding: $spacing-lg;
+        }
+    }
+}
