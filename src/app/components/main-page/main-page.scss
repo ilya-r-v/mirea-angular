@@ -1,3 +1,4 @@
+// Ваши кастомные переменные
 $color-primary: #667eea;
 $color-secondary: #4facfe;
 $color-accent: #00f2fe;
@@ -43,14 +44,25 @@ $transition-normal: 0.3s ease;
 $card-min-width: 300px;
 $skill-min-width: 150px;
 
+// Стили для темной темы
+[data-bs-theme="dark"] {
+  --bs-body-bg: #121212;
+  --bs-body-color: #ffffff;
+  --bs-border-color: #444;
+  
+  .about__content {
+    background: linear-gradient(135deg, #2b2b2b 0%, #3b3b3b 100%) !important;
+    border-left: 5px solid $color-primary !important;
+  }
+}
+
 .page {
     text-align: center;
+    padding: $spacing-lg 0;
 }
 
 .author {
     &__photo {
-        max-width: 100%;
-        height: auto;
         border-radius: $border-radius-md;
         box-shadow: $shadow-light;
     }
@@ -63,13 +75,13 @@ $skill-min-width: 150px;
 }
 
 .about {
-    background: $gradient-secondary;
-    padding: $spacing-xl;
-    border-radius: $border-radius-xl;
-    margin: $spacing-xxl 0;
-    border-left: 5px solid $color-primary;
-    font-size: $font-size-base;
-    line-height: $line-height-loose;
+    &__content {
+        background: $gradient-secondary;
+        border-radius: $border-radius-xl;
+        border-left: 5px solid $color-primary;
+        font-size: $font-size-base;
+        line-height: $line-height-loose;
+    }
 
     &__title {
         margin-bottom: $spacing-md;
@@ -82,9 +94,6 @@ $skill-min-width: 150px;
     }
     
     &__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax($skill-min-width, 1fr));
-        gap: $spacing-md;
         margin: $spacing-lg 0;
     }
 }
@@ -99,6 +108,8 @@ $skill-min-width: 150px;
     box-shadow: $shadow-medium;
     transition: all $transition-normal;
     text-align: center;
+    border: none;
+    min-width: $skill-min-width;
 
     &:hover {
         transform: translateY(-3px);
@@ -112,6 +123,14 @@ $skill-min-width: 150px;
     &--secondary {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     }
+    
+    &--success {
+        background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    }
+    
+    &--danger {
+        background: linear-gradient(135deg, #dc3545 0%, #fd7e14 100%);
+    }
 }
 
 .experience {
@@ -124,29 +143,28 @@ $skill-min-width: 150px;
         margin-bottom: $spacing-xxl;
         font-weight: $font-weight-light;
     }
-    
-    &__grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr));
-        gap: $spacing-lg;
-    }
 }
 
-.card {
+.custom-card {
     background: $color-background;
-    padding: $spacing-xl;
     border-radius: $border-radius-lg;
     box-shadow: $shadow-heavy;
     transition: transform $transition-normal;
+    border: none;
+    min-width: $card-min-width;
 
-    &__title {
+    .card-body {
+        padding: $spacing-xl;
+    }
+
+    .card-title {
         font-size: $font-size-lg;
         color: $color-text-primary;
         margin: 0 0 $spacing-sm 0;
         font-weight: $font-weight-semibold;
     }
 
-    &__description {
+    .card-text {
         color: $color-text-secondary;
         line-height: $line-height-normal;
         margin: 0;
@@ -161,27 +179,15 @@ $skill-min-width: 150px;
     }
     
     &--project {
-        border-left: 4px solid #667eea;
+        border-left: 4px solid #4facfe;
     }
     
     &--internship {
-        border-left: 4px solid #667eea;
-    }
-    
-    &--no-border {
-        border-left: none;
-    }
-
-    &--small {
-        padding: $spacing-lg;
-    }
-    
-    &--large {
-        padding: $spacing-xxl;
+        border-left: 4px solid #00f2fe;
     }
 }
 
-.card.is-active {
+.custom-card.is-active {
     transform: scale(1.02);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
@@ -191,36 +197,35 @@ $skill-min-width: 150px;
     z-index: 1;
 }
 
+// Адаптивность
 @media (max-width: 768px) {
-    .skills__grid {
-        grid-template-columns: 1fr;
-    }
-
-    .experience__grid {
-        grid-template-columns: 1fr;
-    }
-    
     .page {
         padding: $spacing-lg;
     }
     
-    .card {
-        &--large {
-            padding: $spacing-xl;
+    .skills__grid {
+        gap: $spacing-sm !important;
+    }
+    
+    .custom-card {
+        .card-body {
+            padding: $spacing-lg;
         }
     }
 }
 
 @media (max-width: 480px) {
     .skills__grid {
-        grid-template-columns: 1fr;
-        gap: $spacing-sm;
+        gap: $spacing-sm !important;
     }
     
-    .card {
-        padding: $spacing-lg;
-        
-        &--large {
+    .skill-tag {
+        min-width: 120px;
+        padding: $spacing-sm $spacing-md;
+    }
+    
+    .custom-card {
+        .card-body {
             padding: $spacing-lg;
         }
     }

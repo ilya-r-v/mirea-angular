@@ -75,6 +75,8 @@ $transition-bounce: 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 .nav {
     background: var(--nav-bg);
     padding: $spacing-lg 0;
+    display: flex;
+    justify-content: center;
     text-align: center;
     transition: all $transition-normal;
 

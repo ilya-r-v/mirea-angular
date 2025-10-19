@@ -1,41 +1,184 @@
-<div class="page">
-    <section class="author">
-        <p class="author__caption">Информация об авторе</p>
-        <img class="author__photo" src="/assets/images/photo.jpg" alt="Фото меня" width="200px" height="250px">
-        <p class="author__name">Роднов Илья Витальевич</p>
-        <p class="author__group">ЭФБО-02-24</p>
-    </section>
-    
-    <section class="about">
-        <h2 class="about__title">Обо мне</h2>
-        <p class="about__text">Обо мне: Живу в раменском, хожу на пары, мне 19.</p>
-    </section>
-    
-    <section class="skills">
-        <h2 class="skills__title">Мои навыки</h2>
-        <div class="skills__grid"> 
-            <div class="skill-tag">Angular</div>
-            <div class="skill-tag">TS</div>
-            <div class="skill-tag">SCSS</div>
-            <div class="skill-tag">RXJS</div>
+<div class="container-fluid p-0">
+  <!-- Profile Section -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-body p-4">
+        <div class="row align-items-center">
+          <div class="col-md-3 text-center mb-3 mb-md-0">
+            <img src="/assets/images/photo.jpg" alt="Фото меня" 
+                 class="img-fluid rounded-circle" 
+                 style="width: 150px; height: 150px; object-fit: cover;">
+          </div>
+          <div class="col-md-9">
+            <h2 class="card-title h4 text-primary mb-2">Роднов Илья Витальевич</h2>
+            <p class="card-text text-muted mb-2">
+              <i class="bi bi-bookmark-check-fill text-primary me-1"></i>
+              Студент группы ЭФБО-02-24
+            </p>
+            <p class="card-text mb-3">
+              Живу в раменском, хожу на пары, мне 19 лет
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <span class="badge bg-primary">Angular</span>
+              <span class="badge bg-success">TypeScript</span>
+              <span class="badge bg-info">SCSS</span>
+              <span class="badge bg-warning">RXJS</span>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section class="experience">
-        <h2 class="experience__title">Мой опыт работы</h2>
-        <div class="experience__grid"> 
-            <article class="card card--work">
-                <h3 class="card__title">Работа</h3>
-                <p class="card__description">Работал в Т-Банк js Angular Dev, писал компоненты, резолверы, гварды, тесты, фиксил баги</p>
-            </article>
-            <article class="card card--project">
-                <h3 class="card__title">Пет-проект</h3>
-                <p class="card__description">Писал курсач на c++</p>
-            </article>
-            <article class="card card--internship">
-                <h3 class="card__title">Стаж</h3>
-                <p class="card__description">Занимаюсь ангуляром 1,5 года</p>
-            </article>
+  <!-- About Section -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-light">
+        <h3 class="card-title h5 mb-0">
+          <i class="bi bi-person-circle text-primary me-2"></i>
+          Обо мне
+        </h3>
+      </div>
+      <div class="card-body">
+        <p class="card-text">
+          Живу в Раменском, активно занимаюсь обучением и развитием в сфере веб-разработки. 
+          Посещаю пары, изучаю современные технологии и фреймворки.
+        </p>
+        <p class="card-text">
+          Мне 19 лет, и я увлечен созданием качественных веб-приложений с использованием 
+          современных инструментов и лучших практик разработки.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-light">
+        <h3 class="card-title h5 mb-0">
+          <i class="bi bi-tools text-primary me-2"></i>
+          Мои навыки
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>Angular</span>
+                <span class="text-primary">85%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-primary" style="width: 85%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>TypeScript</span>
+                <span class="text-primary">80%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-success" style="width: 80%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>SCSS</span>
+                <span class="text-primary">75%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-info" style="width: 75%"></div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <div class="d-flex justify-content-between mb-1">
+                <span>RXJS</span>
+                <span class="text-primary">70%</span>
+              </div>
+              <div class="progress" style="height: 8px;">
+                <div class="progress-bar bg-warning" style="width: 70%"></div>
+              </div>
+            </div>
+          </div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section class="mb-5">
+    <div class="card shadow-sm">
+      <div class="card-header bg-light">
+        <h3 class="card-title h5 mb-0">
+          <i class="bi bi-briefcase-fill text-primary me-2"></i>
+          Мой опыт работы
+        </h3>
+      </div>
+      <div class="card-body">
+        <div class="row g-3">
+          <!-- Work Experience -->
+          <div class="col-md-4">
+            <div class="card h-100 border-start border-primary border-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-building text-primary me-2"></i>
+                  <h5 class="card-title mb-0">Работа</h5>
+                </div>
+                <p class="card-text small text-muted">
+                  Работал в Т-Банк js Angular Dev, писал компоненты, резолверы, гварды, тесты, фиксил баги
+                </p>
+                <div class="mt-2">
+                  <span class="badge bg-primary">Angular</span>
+                  <span class="badge bg-primary">TypeScript</span>
+                  <span class="badge bg-primary">Testing</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project Experience -->
+          <div class="col-md-4">
+            <div class="card h-100 border-start border-success border-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-code-slash text-success me-2"></i>
+                  <h5 class="card-title mb-0">Пет-проект</h5>
+                </div>
+                <p class="card-text small text-muted">
+                  Писал курсовую работу на C++ с использованием современных подходов и алгоритмов
+                </p>
+                <div class="mt-2">
+                  <span class="badge bg-success">C++</span>
+                  <span class="badge bg-success">Algorithms</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Internship Experience -->
+          <div class="col-md-4">
+            <div class="card h-100 border-start border-info border-4">
+              <div class="card-body">
+                <div class="d-flex align-items-center mb-2">
+                  <i class="bi bi-clock-history text-info me-2"></i>
+                  <h5 class="card-title mb-0">Стаж</h5>
+                </div>
+                <p class="card-text small text-muted">
+                  Занимаюсь разработкой на Angular более 1.5 лет, изучаю лучшие практики и архитектурные паттерны
+                </p>
+                <div class="mt-2">
+                  <span class="badge bg-info">Angular</span>
+                  <span class="badge bg-info">Frontend</span>
+                  <span class="badge bg-info">Architecture</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
