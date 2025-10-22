@@ -55,6 +55,7 @@
 // CSS переменные для светлой темы
 :root, .light-theme {
   // Colors
+  --bg-text-color: black;
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
   --bg-tertiary: #e9ecef;
@@ -112,6 +113,7 @@
 // CSS переменные для темной темы
 .dark-theme {
   // Colors
+  --bg-text-color: white;
   --bg-primary: #1a1a2e;
   --bg-secondary: #16213e;
   --bg-tertiary: #0f3460;

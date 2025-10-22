@@ -97,7 +97,8 @@ $transition-normal: 0.3s ease;
     /* Модификатор: выбрано */
     &--selected {
         border-color: $color-success;
-        background: rgba($color-success, 0.05);
+        background-color: white;
+        //background: rgba($color-success, 0.05);
 
         &::before {
             content: '✓';

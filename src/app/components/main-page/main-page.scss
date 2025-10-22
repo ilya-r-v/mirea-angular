@@ -63,6 +63,7 @@ $skill-min-width: 150px;
 }
 
 .about {
+    color: black;
     background: $gradient-secondary;
     padding: $spacing-xl;
     border-radius: $border-radius-xl;
@@ -118,8 +119,9 @@ $skill-min-width: 150px;
     margin-top: $spacing-section;
 
     &__title {
+        color: var(--bg-text-color);
         font-size: $font-size-xl;
-        color: $color-text-primary;
+        //color: $color-text-primary;
         text-align: center;
         margin-bottom: $spacing-xxl;
         font-weight: $font-weight-light;
